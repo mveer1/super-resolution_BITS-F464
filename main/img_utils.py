@@ -198,7 +198,7 @@ def transform_images_temp(directory, output_directory, scaling_factor=2, max_nb_
 
 
 def image_count():
-    print(output_path);
+    print("TESTING:", output_path);
     return len([name for name in os.listdir(output_path + "X/")])
 
 
