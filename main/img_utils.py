@@ -9,7 +9,6 @@ from keras import backend as K
 
 import os
 import time
-printf()
 '''
 _image_scale_multiplier is a special variable which is used to alter image size.
 The default image size is 32x32. If a true upscaling model is used, then the input image size is 16x16,
