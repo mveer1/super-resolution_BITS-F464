@@ -58,10 +58,7 @@ def transform_images(directory, output_directory, scaling_factor=2, max_nb_image
         print("Transforming %d images." % (nb_images))
 
     if nb_images == 0:
-        print("Extract the training images or images from imageset_91.zip (found in the releases of the project) "
-              "into a directory with the name 'input_images'")
-        print("Extract the validation images or images from set5_validation.zip (found in the releases of the project) "
-              "into a directory with the name 'val_images'")
+        print("NO IMAGES FOUND")
         exit()
 
     for file in os.listdir(directory):
@@ -260,16 +257,3 @@ def _index_generator(N, batch_size=32, shuffle=True, seed=None):
                current_index, current_batch_size)
 
 
-def smooth_gan_labels(y):
-    assert len(y.shape) == 2, "Needs to be a binary class"
-    y = np.asarray(y, dtype='int')
-    Y = np.zeros(y.shape, dtype='float32')
-
-    for i in range(y.shape[0]):
-        for j in range(y.shape[1]):
-            if y[i, j] == 0:
-                Y[i, j] = np.random.uniform(0.0, 0.3)
-            else:
-                Y[i, j] = np.random.uniform(0.7, 1.2)
-
-    return Y

@@ -21,9 +21,8 @@ args = parser.parse_args()
 suffix = args.suffix
 
 model_type = str(args.model).lower()
-if not model_type in ["sr", "esr", "dsr", "ddsr", "rnsr", "distilled_rnsr"]:
-    raise ValueError('Model type must be either "sr", "esr", "dsr", '
-                     '"ddsr", "rnsr" or "distilled_rnsr"')
+if not model_type in ["sr", "esr"]:
+    raise ValueError('Model type must be either "sr", "esr"')
 
 mode = str(args.mode).lower()
 assert mode in ['fast', 'patch'], 'Mode of operation must be either "fast" or "patch"'
