@@ -109,8 +109,6 @@ class TensorBoardBatch(TensorBoard):
         self.writer.flush()
 
 
-''' Theano Backend function '''
-
 def depth_to_scale(x, scale, output_shape, dim_ordering=K.common.image_dim_ordering(), name=None):
     ''' Uses phase shift algorithm [1] to convert channels/depth for spacial resolution '''
 
@@ -144,24 +142,6 @@ def depth_to_scale(x, scale, output_shape, dim_ordering=K.common.image_dim_order
         out = out.transpose((0, 2, 3, 1))
 
     return out
-
-
-''' Theano Backend function '''
-def depth_to_scale_th(input, scale, channels):
-    ''' Uses phase shift algorithm [1] to convert channels/depth for spacial resolution '''
-    import theano.tensor as T
-
-    b, k, row, col = input.shape
-    output_shape = (b, channels, row * scale, col * scale)
-
-    out = T.zeros(output_shape)
-    r = scale
-
-    for y, x in itertools.product(range(scale), repeat=2):
-        out = T.inc_subtensor(out[:, :, y::r, x::r], input[:, r * y + x :: r * r, :, :])
-
-    return out
-
 
 ''' Tensorflow Backend Function '''
 def depth_to_scale_tf(input, scale, channels):
