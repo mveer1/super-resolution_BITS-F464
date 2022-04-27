@@ -5,18 +5,18 @@ Implementation of Image Super Resolution CNN in Keras from the paper
 
 Also contains models that outperforms the above mentioned model, termed Expanded Super Resolution, Denoiseing Auto Encoder SRCNN which outperforms both of the above models and Deep Denoise SR, which with certain limitations, outperforms all of the above.
 
-## Setup
+## Requirements
 ```
 pillow
 imageio
 sklearn
 scipy
-tensorflow == 1.15.0
-keras == 2.3.1
-kapre == 0.1.4
-tensorflow-probability == 0.6.0
-scipy == 1.2.0
-h5py == 2.10.0
+tensorflow
+keras
+kapre
+tensorflow-probability
+scipy
+h5py
 ```
 
 ## Usage
