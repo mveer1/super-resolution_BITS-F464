@@ -35,7 +35,7 @@ To change scaling factor :<br>
 
 Optimizer Used: Adam
 
-### Denoiseing (Auto Encoder) Super Resolution CNN (DSRCNN)
+### Super Resolution CNN with Denoiseing
 <img src="https://raw.githubusercontent.com/titu1994/ImageSuperResolution/master/architectures/Denoise.png" height=100% width=40%>
 
 The above is the "Denoiseing Auto Encoder SRCNN", which performs even better than SRCNN.
