@@ -38,7 +38,7 @@ Optimizer Used: Adam
 ### Super Resolution CNN with Denoiseing
 <img src="https://raw.githubusercontent.com/titu1994/ImageSuperResolution/master/architectures/Denoise.png" height=100% width=40%>
 
-The above is the "Denoiseing Auto Encoder SRCNN", which performs even better than SRCNN.
+The above is the "SRCNN with Denoiseing", which performs even better than SRCNN.
 
 This model uses bridge connections between the convolutional layers of the same level in order to speed up convergence and improve output results. The bridge connections are averaged to be more robust. 
 
