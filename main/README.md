@@ -37,9 +37,12 @@ Optimizer Used: Adam
 
 ### Super Resolution CNN with Denoiseing
 <img src="https://raw.githubusercontent.com/titu1994/ImageSuperResolution/master/architectures/Denoise.png" height=100% width=40%>
-
+```
 The above is the "SRCNN with Denoiseing", which performs even better than SRCNN.
 
-This model uses bridge connections between the convolutional layers of the same level in order to speed up convergence and improve output results. The bridge connections are averaged to be more robust. 
+This model uses bridge connections between the convolutional layers of the same level in order to speed up convergence and improve output results. 
+The bridge connections are averaged to be more robust. 
 
-Since the training images are passed through a gausian filter (sigma = 0.5), then downscaled to 1/3rd the size, then upscaled to the original 33x33 size images, the images can be considered "noisy". Thus, this auto encoder quickly improves on the earlier results, and reduces the noisy output image problem faced by the simpler SRCNN model.
+Since the training images are passed through a gausian filter (sigma = 0.5), then downscaled to 1/3rd the size, then upscaled to the original 33x33 size images, the images can be considered "noisy". 
+Thus, this auto encoder quickly improves on the earlier results, and reduces the noisy output image problem faced by the simpler SRCNN model.
+```
